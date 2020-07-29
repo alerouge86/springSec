@@ -155,5 +155,27 @@ public class UtiData {
 		DayOfWeek dayOfWeek = localDateTime.getDayOfWeek();
 		return dayOfWeek.toString();
 	}
-	
+
+	/**
+	 * Ritorna la data passata con l'ora iniziale del giorno "00:00:00"
+	 */
+	public static java.util.Date getDataInizioGiorno(String dataSql){
+		LocalDateTime localDateTime = LocalDateTime.of(Integer.parseInt(dataSql.split("-")[0]), 
+													   Integer.parseInt(dataSql.split("-")[1]), 
+													   Integer.parseInt(dataSql.split("-")[2]),
+													   0, 0, 0);
+		return formatLocalDateTimeToDate(localDateTime);
+	}
+
+	/**
+	 * Ritorna la data passata con l'ora finale del giorno "23:59:59"
+	 */
+	public static java.util.Date getDataFineGiorno(String dataSql){
+		LocalDateTime localDateTime = LocalDateTime.of(Integer.parseInt(dataSql.split("-")[0]), 
+													   Integer.parseInt(dataSql.split("-")[1]), 
+													   Integer.parseInt(dataSql.split("-")[2]),
+													   23, 59, 59);
+		return formatLocalDateTimeToDate(localDateTime);
+	}
+
 }

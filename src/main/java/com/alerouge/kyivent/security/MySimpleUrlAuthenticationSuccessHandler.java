@@ -26,6 +26,8 @@ import java.util.Map;
 @Component("myAuthenticationSuccessHandler")
 public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 	
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+    
     @Autowired
     private IUserService userService;
 

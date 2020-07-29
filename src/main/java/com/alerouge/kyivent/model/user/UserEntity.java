@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.alerouge.kyivent.model.table.CittaEntity;
+
 @Entity
 @Table(name="users")
 public class UserEntity {
@@ -47,6 +49,10 @@ public class UserEntity {
     @Column(name="enabled")
     private boolean enabled;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cittaId", referencedColumnName = "id")
+    private CittaEntity citta;
+    
     public UserEntity() {
         super();
         this.enabled=false;
@@ -122,6 +128,14 @@ public class UserEntity {
 
 	public void setDataIscrizione(java.util.Date dataIscrizione) {
 		this.dataIscrizione = dataIscrizione;
+	}
+
+	public CittaEntity getCitta() {
+		return citta;
+	}
+
+	public void setCitta(CittaEntity citta) {
+		this.citta = citta;
 	}
 
 }

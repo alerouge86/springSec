@@ -14,10 +14,36 @@ public class HomeController extends BaseController {
 	public String homePage(){
 		return "home";
 	}
+	
+	@GetMapping(value ="/firstPage")
+	public String firstPage(){
+		return "firstPage";
+	}
+	
+
+//	@GetMapping(value ="/user")
+//	public String userPage(){
+//		return "user";
+//	}
+
+//	@GetMapping(value ="/admin")
+//	public String adminPage(){
+//		return "admin";
+//	}
 
     @GetMapping("/login")
     public String login() {
-    	return "/login";
+    	// se utente gia loggato -> page not found
+    	if (utenteLoggato()){
+	        return "error/page404";
+		} else {
+	        return "/login";
+		}
+    }
+
+	@GetMapping("/page403")
+    public String error403() {
+        return "/error/page403";
     }
 
 }

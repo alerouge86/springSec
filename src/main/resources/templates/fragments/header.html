@@ -20,21 +20,18 @@
 		<div class="w3-col l3">
 			<div id="elencoMenuOriz" class="w3-hide-small">
 				
-<!-- 				user info -->
-				<div sec:authorize="hasRole('ROLE_USER')" class="w3-right" id="userInfoDivMain">
-<!-- 				img user logged con dropdown menu -->
-					<a href="javascript:openCloseUserInfoDiv();" class="w3-right">
-						<span class="fas fa-user-circle icoMiddle"></span>
-					</a>
-				  <div id="userInfoDiv" class="w3-dropdown-content w3-bar-block w3-border ">
-				    <a href="#" th:href="@{/logout}" class="w3-bar-item menuItemuUserInfo" th:text="#{app.user.logout}">logout</a>
-				  </div>
-				</div>
 
 <!-- 				login -->
 				<div id="divSignInUp">
 					<a sec:authorize="not hasRole('ROLE_USER')" th:href="@{/login}" class="w3-right">
 						login
+					</a>
+				</div>
+
+<!-- 				logout -->
+				<div id="divSignInUp">
+					<a sec:authorize="hasRole('ROLE_USER')" th:href="@{/logout}" class="w3-right">
+						logout
 					</a>
 				</div>
 				

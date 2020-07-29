@@ -1,11 +1,5 @@
 package com.alerouge.kyivent.utility;
 
-/**
- * Gestione utility per la gestione stringhe
- * @author Alessandro Rossi
- * @since 04 nov 2019
- * @version 2.0
- */
 public class UtiStringa {
 
 	private UtiStringa(){

@@ -14,12 +14,6 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import com.alerouge.kyivent.interceptor.CommonAttributesInterceptor;
 
 
-/**
- * Classe di configurazione per spring mvc
- * @author Alessandro Rossi
- * @since 10 nov 2019
- * @version 2.0
- */
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer {
 	
@@ -40,21 +34,11 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 	    return lci;
 	}
     
-    /**
-     * Gestione interceptor
-     * @author Alessandro Rossi
-	 * @since 10 nov 2019
-     */
     @Bean
     public CommonAttributesInterceptor commonAttributesInterceptor() {
         return new CommonAttributesInterceptor();
     }
 
-    /**
-     * Gestione esclusione path per interceptor
-     * @author Alessandro Rossi
-	 * @since 10 nov 2019
-     */
     public @Override void addInterceptors(InterceptorRegistry registry) {
     	
     	registry.addInterceptor(localeChangeInterceptor());

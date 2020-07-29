@@ -24,10 +24,6 @@ public class UserAuthoritiesEntity {
     @Column(name="authority")
     private String authority;
 
-//    @OneToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "user_id", nullable=false, insertable = false, updatable = false)
-//    private UserEntity user;
-    
 	public Long getId() {
 		return id;
 	}
@@ -51,13 +47,5 @@ public class UserAuthoritiesEntity {
 	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
-
-//	public UserEntity getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(UserEntity user) {
-//		this.user = user;
-//	}
 
 }

@@ -21,15 +21,6 @@ public class HomeController extends BaseController {
 	}
 	
 
-//	@GetMapping(value ="/user")
-//	public String userPage(){
-//		return "user";
-//	}
-
-//	@GetMapping(value ="/admin")
-//	public String adminPage(){
-//		return "admin";
-//	}
 
     @GetMapping("/login")
     public String login() {
@@ -41,9 +32,6 @@ public class HomeController extends BaseController {
 		}
     }
 
-	@GetMapping("/page403")
-    public String error403() {
-        return "/error/page403";
-    }
+
 
 }

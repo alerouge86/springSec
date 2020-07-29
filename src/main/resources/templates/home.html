@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="it">
+
+<!-- head fragment: contiene title, meta, incluse (css,js) -->
+<head th:replace="fragments/headPage :: headPage"></head>
+
+<body>
+
+    <!-- Include del div mobile sidebar -->
+    <div th:replace="fragments/mobileSideBar :: mobileSideBar"></div>
+
+
+	<div id="mainContainer">
+    <!-- Include del div top bar orizzontale -->
+    <div th:replace="fragments/header :: header"></div>
+	
+		<div class="w3-row-padding" id="mainContainerInner">
+
+			<div class="w3-row-padding w3-theme w3-center" id="divDescApp">
+					<h3 th:text="#{home.descrizione}">descrizione app</h3>
+			</div>
+	
+			<div class="w3-row-padding w3-theme">
+				<div class="w3-third w3-section">
+					<a th:href="@{/showEvents}" >
+						<div class="w3-card-4 homeContainerInternal">
+							<div class="w3-center">
+								<span class="fa fa-soccer-ball-o icoHome"></span>
+							</div>
+							<div class="w3-container sectionDescrizioneHome">
+								<h4 th:utext="#{event.trova.bold}">trova un evento</h4>
+								<p th:utext="#{event.trova.desc}">descrizione</p>
+							</div>
+						</div>
+					</a>
+				</div>
+			
+				<div class="w3-third w3-section">
+					<a th:href="@{/event/home}">
+						<div class="w3-card-4 homeContainerInternal">
+							<div class="w3-center">
+								<span class="fa fa-group icoHome"></span>
+							</div>
+							<div class="w3-container sectionDescrizioneHome">
+								<h4 th:utext="#{event.myEventsBold}">i miei eventi</h4>
+								<p th:utext="#{event.myEvents.desc}">descrizione</p>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<div class="w3-third w3-section">
+					<a th:href="@{/club/home}">
+						<div class="w3-card-4 homeContainerInternal">
+							<div class="w3-center">
+								<span class="fa fa-group icoHome"></span>
+							</div>
+							<div class="w3-container sectionDescrizioneHome">
+								<h4 th:utext="#{club.myClubBold}">i miei club</h4>
+								<p th:utext="#{club.myClub.desc}">descrizione</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				
+			</div>
+
+			<div id="divLastEventi" class="w3-theme bordoTopWhiteDiv">
+			  <h1 th:text="#{home.lastevents}">ultimi eventi</h1>
+			  
+				<div class="w3-card-4">
+					<section class="w3-container"> 
+					  <h2>Football game</h2>
+					  <p>A new footbal event is up on Saturday, April 26th at the ... stadium
+					  <button type="submit" class="w3-btn buttonDark w3-round w3-right" th:text="#{event.join}">join</button>
+					  </p>
+					  <hr>
+					</section>
+
+					<section class="w3-container"> 
+					  <h2>Football game</h2>
+					  <p>A new footbal event is up on Saturday, April 26th at the ... stadium
+					  <button type="submit" class="w3-btn buttonDark w3-round w3-right" th:text="#{event.join}">join</button>
+					  </p>
+					  <hr>
+					</section>
+
+					<section class="w3-container"> 
+					  <h2>Football game</h2>
+					  <p>A new footbal event is up on Saturday, April 26th at the ... stadium
+					  <button type="submit" class="w3-btn buttonDark w3-round w3-right" th:text="#{event.join}">join</button>
+					  </p>
+					  <hr>
+					</section>
+				</div>
+				
+			</div>				
+	
+		</div>
+		
+	</div>
+	
+	<!-- footer -->
+	<div th:replace="fragments/footer :: footer"></div>
+
+  <!-- javaScript che deve trovarsi al fondo della pagina -->
+  <script th:replace="fragments/scriptsBottomPage :: scriptsBottomPage"></script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="it">
+
+<!-- head fragment: contiene title, meta, incluse (css,js) -->
+<head th:replace="fragments/headPage :: headPage"></head>
+
+<body>
+
+<!-- 	<div class="w3-row w3-top barraOrizzontale" th:fragment="header" id="divHeaderMain"> -->
+		
+<!-- 		<div class="w3-col l4"> -->
+<!-- 		    <a href="javascript:openCloseMobileSidebar();">  -->
+<!-- 					<span id="spanOpenMobileSideBar" class="fa fa-bars w3-left w3-hide-large"></span> -->
+<!-- 				</a> -->
+<!-- 			<a th:href="@{/}"><span id="titoloAppBarraOriz" th:text="${applicationName} + ' (' + ${applicationCity} + ') ' + ${applicationVersion}">kyivent</span></a> -->
+<!-- 		</div> -->
+		
+<!-- 		<div class="w3-col l6"> -->
+<!-- 			<div id="elencoMenuOriz" class="w3-hide-small"> -->
+<!-- 				<a th:href="@{/}"><span id="spanHome" class="fa fa-home"></span></a>  -->
+<!-- 				<a th:href="@{/showEvents}" class="menuItem" th:utext="#{event.trova}">trova un evento</a> -->
+<!-- 				<a th:href="@{/event/home}" class="menuItem" th:utext="#{event.myEvents}">i miei eventi</a> -->
+<!-- 				<a th:href="@{/club/home}" class="menuItem" th:utext="#{club.myClub}">i miei club</a> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		
+<!-- 		<div class="w3-col l2"> -->
+<!-- 			<div id="elencoMenuOriz" class="w3-hide-small"> -->
+<!-- <!-- 				img user not logged --> -->
+<!-- 				<span sec:authorize="NOT hasRole('ROLE_USER')" class="fa fa-user-circle-o icoMiddle w3-right"></span> -->
+				
+<!-- <!-- 				user info --> -->
+<!-- 				<div sec:authorize="hasRole('ROLE_USER')" class="w3-right" id="userInfoDivMain"> -->
+<!-- <!-- 				img user logged con dropdown menu --> -->
+<!-- 					<a href="javascript:openCloseUserInfoDiv();" class="w3-right"> -->
+<!-- 						<span class="fa fa-user-circle-o icoMiddle"></span> -->
+<!-- 					</a> -->
+<!-- 				  <div id="userInfoDiv" class="w3-dropdown-content w3-bar-block w3-border w3-card-4"> -->
+<!-- 				    <b><a href="#" class="w3-bar-item" th:text="${userLogged.nome} + ' ' + ${userLogged.cognome}">nome cognome</a></b> -->
+<!-- 				    <a href="#" class="w3-bar-item menuItemuUserInfo" th:text="#{app.user.profile}">tuo profilo</a> -->
+<!-- 				    <a href="#" class="w3-bar-item menuItemuUserInfo" th:text="#{app.help}">help</a> -->
+<!-- 				    <a href="#" class="w3-bar-item menuItemuUserInfo" th:text="#{app.setting}">setting</a> -->
+<!-- 				    <a href="#" th:href="@{/logout}" class="w3-bar-item menuItemuUserInfo" th:text="#{app.user.logout}">logout</a> -->
+<!-- 				  </div> -->
+<!-- 				</div> -->
+
+<!-- <!-- 				login --> -->
+<!-- 				<div id="divSignInUp"> -->
+<!-- 					<a sec:authorize="not hasRole('ROLE_USER')" th:href="@{/login}" class="w3-right menuItem"> -->
+<!-- 						<span class="w3-right" th:text="#{app.user.login}">login</span> -->
+<!-- 					</a> -->
+<!-- 					<a sec:authorize="not hasRole('ROLE_USER')" th:href="@{/user/register}" class="w3-right menuItem"> -->
+<!-- 						<span class="w3-right" th:text="#{app.user.register}">registrati</span> -->
+<!-- 					</a> -->
+<!-- 				</div> -->
+				
+<!-- 				<span sec:authorize="hasRole('ROLE_USER')" class="w3-right" th:text="${userLogged.nome}">logged user name</span> -->
+				
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!--   </div> -->
+
+
+	<div class="w3-row w3-top barraOrizzontale" th:fragment="header" id="divHeaderMain">
+		<div class="w3-col l4">
+			<div id="elencoMenuOriz" class="w3-hide-small">
+				<a th:href="@{/}"><span id="spanHome" class="fa fa-home"></span></a> 
+				<a th:href="@{/showEvents}" class="menuItem" th:utext="#{event.trova}">trova un evento</a>
+				<a th:href="@{/event/home}" class="menuItem" th:utext="#{event.myEvents}">i miei eventi</a>
+				<a th:href="@{/club/home}" class="menuItem" th:utext="#{club.myClub}">i miei club</a>
+			</div>
+		</div>
+
+		<div class="w3-col l5 w3-center">
+		    <a href="javascript:openCloseMobileSidebar();"> 
+					<span id="spanOpenMobileSideBar" class="fa fa-bars w3-left w3-hide-large"></span>
+				</a>
+			<a th:href="@{/}"><span id="titoloAppBarraOriz" th:text="${applicationName} + ' (' + ${applicationCity} + ') ' + ${applicationVersion}">kyivent</span></a>
+		</div>
+
+		<div class="w3-col l3">
+			<div id="elencoMenuOriz" class="w3-hide-small">
+<!-- 				img user not logged -->
+				<a sec:authorize="not hasRole('ROLE_USER')" th:href="@{/login}" class="w3-right">
+					<span sec:authorize="NOT hasRole('ROLE_USER')" class="fas fa-user-circle icoMiddle w3-right"></span>
+				</a>
+				
+<!-- 				user info -->
+				<div sec:authorize="hasRole('ROLE_USER')" class="w3-right" id="userInfoDivMain">
+<!-- 				img user logged con dropdown menu -->
+					<a href="javascript:openCloseUserInfoDiv();" class="w3-right">
+						<span class="fas fa-user-circle icoMiddle"></span>
+					</a>
+				  <div id="userInfoDiv" class="w3-dropdown-content w3-bar-block w3-border ">
+				    <b><a href="#" class="w3-bar-item" th:text="${userLogged.nome} + ' ' + ${userLogged.cognome}">nome cognome</a></b>
+				    <a href="#" class="w3-bar-item menuItemuUserInfo" th:text="#{app.user.profile}">tuo profilo</a>
+				    <a href="#" class="w3-bar-item menuItemuUserInfo" th:text="#{app.help}">help</a>
+				    <a href="#" class="w3-bar-item menuItemuUserInfo" th:text="#{app.setting}">setting</a>
+				    <a href="#" th:href="@{/logout}" class="w3-bar-item menuItemuUserInfo" th:text="#{app.user.logout}">logout</a>
+				  </div>
+				</div>
+
+<!-- 				login -->
+				<div id="divSignInUp">
+					<a sec:authorize="not hasRole('ROLE_USER')" th:href="@{/login}" class="w3-right menuItem">
+						<span class="w3-right" th:text="#{app.user.login}">login</span>
+					</a>
+					<a sec:authorize="not hasRole('ROLE_USER')" th:href="@{/user/register}" class="w3-right menuItem">
+						<span class="w3-right" th:text="#{app.user.register}">registrati</span>
+					</a>
+				</div>
+				
+				<span sec:authorize="hasRole('ROLE_USER')" class="w3-right" th:text="${userLogged.nome}">logged user name</span>
+				
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>

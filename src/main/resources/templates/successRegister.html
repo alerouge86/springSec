@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="it">
+
+<!-- head fragment: contiene title, meta, incluse (css,js) -->
+<head th:replace="fragments/headPage :: headPage"></head>
+
+<body>
+
+    <!-- Include del div mobile sidebar -->
+    <div th:replace="fragments/mobileSideBar :: mobileSideBar"></div>
+
+
+	<div id="mainContainer" class="w3-container">
+	    <!-- Include del div top bar orizzontale -->
+	    <div th:replace="fragments/header :: header"></div>
+	
+		<div class="w3-container w3-theme-d1">
+			<h3 th:text="#{app.user.confermaAccount}">conferma account</h3>
+			<p th:utext="#{app.user.confermaAccountDescrizione}"></p>
+		</div>
+
+	</div>
+	
+	<!-- footer -->
+	<div th:replace="fragments/footer :: footer"></div>
+
+  <!-- javaScript che deve trovarsi al fondo della pagina -->
+  <script th:replace="fragments/scriptsBottomPage :: scriptsBottomPage"></script>
+
+</body>
+</html>

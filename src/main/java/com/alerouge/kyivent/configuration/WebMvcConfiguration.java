@@ -12,12 +12,6 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 
-/**
- * Classe di configurazione per spring mvc
- * @author Alessandro Rossi
- * @since 10 nov 2019
- * @version 2.0
- */
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer {
 	

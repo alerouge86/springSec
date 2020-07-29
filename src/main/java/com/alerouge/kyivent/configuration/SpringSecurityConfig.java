@@ -64,17 +64,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/images/**").permitAll()
 		.antMatchers("/css/**").permitAll()
 		.antMatchers("/js/**").permitAll()
-		.antMatchers("/", "/home", "/login", "/user/register", "/user/registrationConfirm", "/event/**").permitAll()
-//		.antMatchers("/admin/**").hasAnyRole("ADMIN")
-//		.antMatchers("/user/**").hasAnyRole("USER")
+		.antMatchers("/", "/home", "/login", "/firstPage").permitAll()
 		
-		// indicare tutte le request che devono essere permesse solo agli utenti
-		// esempio:
-//		.antMatchers("/event/**").hasAnyRole("USER")
-		
-		
-		// tutte le pagine devono essere permesse a tutti
-//		.anyRequest().authenticated()
 		.and()
 		.formLogin()
 			.loginPage("/login")

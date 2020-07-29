@@ -8,10 +8,6 @@
 
 <body>
 
-	<!-- Include del div mobile sidebar -->
-	<div th:replace="fragments/mobileSideBar :: mobileSideBar"></div>
-
-
 	<div id="mainContainer">
 		<!-- Include del div top bar orizzontale -->
 		<div th:replace="fragments/header :: header"></div>
@@ -19,8 +15,8 @@
 		<div class="w3-row-padding" id="mainContainerInner">
 
 
-			<div class="w3-row w3-row-padding w3-theme w3-center" id="mainContainerInner2" style="height: 40em;">
-				<h1 class="w3-border-bottom" th:utext="#{app.user.login}">login</h1>
+			<div class="w3-row w3-row-padding  w3-center" id="mainContainerInner2" style="height: 40em;">
+				<h1 class="w3-border-bottom" >login</h1>
 
 				<div class="w3-col l4">
 					&nbsp;
@@ -32,36 +28,26 @@
 						<br class="w3-hide-small">
 						
             <p>
-              <input name="username" id="username" class="" type="email" autofocus="autofocus" th:placeholder="#{app.user.email}" 
+              <input name="username" id="username" class="" type="email" autofocus="autofocus" placeholder="email"  
               required minlength="2" maxlength="200">
             </p>
             <p>
-              <input name="password" id="password" class="" type="password" autofocus="autofocus" th:placeholder="#{app.user.password}" 
+              <input name="password" id="password" class="" type="password" autofocus="autofocus"   placeholder="password"
               required minlength="2" maxlength="200">
             </p>
-            <a th:href="@{/user/forgotPassword}" >
-							<span class="w3-left w3-small" th:utext="#{app.user.login.forgotPassword}">forgot password</span>
-						</a>
 						
 						<br>
 						<p>
-			        <button type="submit" class="w3-btn buttonDark w3-round" th:text="#{app.user.login}">login</button>
+			        <button type="submit" class="w3-btn buttonDark w3-round" >login</button>
 						</p>
 						
-						<hr>
 						
-						<p class="w3-left" id="pNewUserDaLogin">
-							<span th:text="#{app.user.newUser}">new user?</span>&nbsp;<b><a th:text="#{app.user.creaUser}" th:href="@{/user/register}" >create un utente!</a></b>
-						</p>
 						
 					  <br>
 					  &nbsp;
 
 					</form>
 
-<!-- 			    <h1 th:text="${message}">message</h1> -->
-					<h1 >message</h1>
-				
 					
 					
 				</div>
@@ -75,12 +61,6 @@
 		</div>
 
 	</div>
-
-	<!-- footer -->
-	<div th:replace="fragments/footer :: footer"></div>
-
-  <!-- javaScript che deve trovarsi al fondo della pagina -->
-  <script th:replace="fragments/scriptsBottomPage :: scriptsBottomPage"></script>
 
 </body>
 </html>

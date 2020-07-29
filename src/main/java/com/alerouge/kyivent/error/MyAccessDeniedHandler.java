@@ -33,7 +33,6 @@ public class MyAccessDeniedHandler implements AccessDeniedHandler {
                     + httpServletRequest.getRequestURI());
         }
 
-        // TODO: gestire la pagina di errore graficamente
         httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/page403");
 
     }

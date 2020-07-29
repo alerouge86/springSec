@@ -5,7 +5,7 @@
 <!-- head fragment: contiene title, meta, incluse (css,js) -->
 <head th:replace="fragments/headPage :: headPage"></head>
 
-<body>
+<body style="background-color: lightblue;">
 
 	<div id="mainContainer">
 	
@@ -15,17 +15,13 @@
 		<div class="w3-row-padding" id="mainContainerInner">
 
 			<div class="w3-row-padding w3-theme w3-center">
-				<h1>prima pagina (pagina visibile anche per utenti non loggati)</h1>
+				<h2>prima pagina (pagina visibile anche per utenti non loggati)</h2>
 				
 				<br>
 				
-				<h2>ma se da qui faccio login (ed è ok) voglio ritornare a questa pagina</h2>
+				<h1 style="font-size: 4em;"><strong>ma se da qui faccio login (ed è validato) voglio ritornare a questa pagina</strong></h1>
 
 				<br>
-				
-				<a sec:authorize="not hasRole('ROLE_USER')" th:href="@{/login}">
-					login
-				</a>
 				
 				
 			</div>

@@ -14,7 +14,9 @@
 		</div>
 
 		<div class="w3-col l5 w3-center">
-			<span id="titoloAppBarraOriz">App prova</span>
+			<a th:href="@{/}">
+				<span id="titoloAppBarraOriz">App prova</span>
+			</a>
 		</div>
 
 		<div class="w3-col l3">
@@ -30,6 +32,7 @@
 
 <!-- 				logout -->
 				<div id="divSignInUp">
+					<span style="color: black;" sec:authorize="hasRole('ROLE_USER')"><strong>LOGIN EFFETTUATO!</strong></span>
 					<a sec:authorize="hasRole('ROLE_USER')" th:href="@{/logout}" class="w3-right">
 						logout
 					</a>

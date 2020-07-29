@@ -1,11 +1,5 @@
 package com.alerouge.kyivent.configuration;
 
-/**
- * Contiene tutte le configurazini generali lette dal file application.properties
- * @author Alessandro Rossi
- * @since 13 nov 2019
- * @version 2.0
- */
 public class GeneralConfig {
 	
 	private String applicationName;

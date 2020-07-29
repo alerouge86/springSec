@@ -12,7 +12,7 @@
 	<artifactId>Kyivent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Kyivent</name>
-	<description>Kyi events manager</description>
+	<description>prova</description>
 
 	<properties>
 		<downloadSources>true</downloadSources>
@@ -58,12 +58,6 @@
 			<version>${passay.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
-		</dependency>
-
 		<!-- thymeleaf -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -96,11 +90,6 @@
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
 
-		<!-- send email -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
 
 		<!-- mysql -->
 		<dependency>

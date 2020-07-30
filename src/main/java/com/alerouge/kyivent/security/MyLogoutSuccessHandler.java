@@ -21,6 +21,7 @@ public class MyLogoutSuccessHandler implements LogoutSuccessHandler {
             session.removeAttribute("user");
         }
 
+        // dispatch home ("/") dopo il logout
         response.sendRedirect("/");
     }
 }

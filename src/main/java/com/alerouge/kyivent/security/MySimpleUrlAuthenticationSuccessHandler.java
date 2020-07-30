@@ -50,12 +50,13 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
             else {
             	username = authentication.getName();
             }
-            // TODO: settare in sessione
             UserEntity userLogged = userService.findUserByEmail(username);
+            
+            // setto utente in sessione
             userLoggedSession.init(userLogged);
             
             
-            // dispatch home after login
+            // dispatch home dopo il login
             String targetUrl = determineTargetUrl(authentication);
             redirectStrategy.sendRedirect(request, response, targetUrl);
             

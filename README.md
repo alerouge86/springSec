@@ -12,8 +12,9 @@ SpringBoot + spring security:
  puoi fare le 2 insert e l'alter table che trovi in "users.sql"
  
  
- utente (ROLE_USER):
- a@a.it
+utente (ROLE_USER):
+a@a.it
  
- pwd:
- 123
+pwd:
+123
+ 

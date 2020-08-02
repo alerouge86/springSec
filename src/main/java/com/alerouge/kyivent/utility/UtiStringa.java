@@ -1,5 +1,6 @@
 package com.alerouge.kyivent.utility;
 
+// Lascia perdere sta roba usa le funzioni di apache oppure quelle di spring
 public class UtiStringa {
 
 	private UtiStringa(){

@@ -58,8 +58,8 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
             
             // dispatch home dopo il login
             String targetUrl = determineTargetUrl(authentication);
-            redirectStrategy.sendRedirect(request, response, targetUrl);
             
+            redirectStrategy.sendRedirect(request, response, targetUrl);
             
             clearAuthenticationAttributes(request);
         }
@@ -69,7 +69,8 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
    	 
 	    Map<String, String> roleTargetUrlMap = new HashMap<>();
 //	    roleTargetUrlMap.put("ROLE_ADMIN", "/adminPage");
-	    roleTargetUrlMap.put("ROLE_USER", "/");
+	 // questa è l'unica cosa che sono riuscito a fare. Purtroppo non ha nessun riferimento per andare in una pagina piuttosto che nelle altre.
+	    roleTargetUrlMap.put("ROLE_USER", "/firstPage");
 	 
 	    final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 	    for (final GrantedAuthority grantedAuthority : authorities) {

@@ -16,6 +16,8 @@ public class UserLoggedSession implements java.io.Serializable{
 
 	private static final long serialVersionUID = 195966139358504261L;
 
+	// Le entities lato DB devono essere sempre disaccopiate dagli oggetti che si espongono lato FE.
+	// Dovresti fare un DTO(Data Trans Object) esempio UserEntityDTO
 	private UserEntity user;
 
 	public void clean(){

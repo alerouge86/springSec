@@ -10,11 +10,13 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+import org.springframework.web.util.WebUtils;
 
 import com.alerouge.kyivent.model.session.UserLoggedSession;
 import com.alerouge.kyivent.model.user.UserEntity;
 import com.alerouge.kyivent.service.user.IUserService;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -56,8 +58,9 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
             userLoggedSession.init(userLogged);
             
             
+    		Cookie cookiePage = WebUtils.getCookie(request, "cookiePage");
             // dispatch home dopo il login
-            String targetUrl = determineTargetUrl(authentication);
+            String targetUrl = "/" + cookiePage.getValue();
             
             redirectStrategy.sendRedirect(request, response, targetUrl);
             
@@ -65,23 +68,22 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
         }
     }
     
-    protected String determineTargetUrl(final Authentication authentication) {
-   	 
-	    Map<String, String> roleTargetUrlMap = new HashMap<>();
-//	    roleTargetUrlMap.put("ROLE_ADMIN", "/adminPage");
-	 // questa è l'unica cosa che sono riuscito a fare. Purtroppo non ha nessun riferimento per andare in una pagina piuttosto che nelle altre.
-	    roleTargetUrlMap.put("ROLE_USER", "/firstPage");
-	 
-	    final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-	    for (final GrantedAuthority grantedAuthority : authorities) {
-	        String authorityName = grantedAuthority.getAuthority();
-	        if(roleTargetUrlMap.containsKey(authorityName)) {
-	            return roleTargetUrlMap.get(authorityName);
-	        }
-	    }
-	 
-	    throw new IllegalStateException();
-	}
+//    protected String determineTargetUrl(final Authentication authentication) {
+//   	 
+//	    Map<String, String> roleTargetUrlMap = new HashMap<>();
+////	    roleTargetUrlMap.put("ROLE_ADMIN", "/adminPage");
+//	    roleTargetUrlMap.put("ROLE_USER", "/");
+//	 
+//	    final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+//	    for (final GrantedAuthority grantedAuthority : authorities) {
+//	        String authorityName = grantedAuthority.getAuthority();
+//	        if(roleTargetUrlMap.containsKey(authorityName)) {
+//	            return roleTargetUrlMap.get(authorityName);
+//	        }
+//	    }
+//	 
+//	    throw new IllegalStateException();
+//	}
 
     protected void clearAuthenticationAttributes(HttpServletRequest request) {
 	    HttpSession session = request.getSession(false);

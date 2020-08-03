@@ -5,7 +5,7 @@
 <!-- head fragment: contiene title, meta, incluse (css,js) -->
 <head th:replace="fragments/headPage :: headPage"></head>
 
-<body style="background-color: red">
+<body style="background-color: lightgreen;">
 
 	<div id="mainContainer">
 	
@@ -14,22 +14,15 @@
 	
 		<div class="w3-row-padding" id="mainContainerInner">
 
-			<div class="w3-row-padding w3-theme w3-center" style="color: white">
-				<h1>home page (pagina visibile anche per utenti non loggati)</h1>
+			<div class="w3-row-padding w3-theme w3-center">
+				<h2>seconda pagina (pagina visibile anche per utenti non loggati)</h2>
 				
 				<br>
 				
-				<a th:href="@{/firstPage}" style="font-size: 3em;">
-					vai alla first page
-				</a>
+				<h1 style="font-size: 4em;"><strong>ma se da qui faccio login (ed è validato) voglio ritornare a questa pagina</strong></h1>
 
 				<br>
-				<br>
-				<br>
-
-				<a th:href="@{/secondPage}" style="font-size: 3em;">
-					vai alla second page
-				</a>
+				
 				
 			</div>
 	
